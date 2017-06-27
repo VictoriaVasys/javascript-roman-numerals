@@ -1,6 +1,10 @@
 function convertToOldRoman(num) {
   numeral = []
-  if (num / 10 >= 1 && num % 10 >= 0) {
+  if (num / 50 >= 1 && num % 50 >= 0) {
+    addTens(numeral, (Math.floor((num / 10) % 10)))
+    addFive(numeral,(num - (num % 5)))
+    return addOnes(numeral,(num % 5))
+  } else if (num / 10 >= 1 && num % 10 >= 0) {
     addTens(numeral, (Math.floor((num / 10) % 10)))
     addFive(numeral,(num - (num % 5)))
     return addOnes(numeral,(num % 5))
